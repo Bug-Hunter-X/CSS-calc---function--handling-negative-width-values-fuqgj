@@ -1,0 +1,19 @@
+The following CSS code provides a solution to the problem, using `max-width`:
+
+```css
+.container {
+  width: calc(50% - 10px);
+  max-width: 100%; /* Ensures width never goes below 0 */
+}
+```
+
+Alternatively, you could use a conditional statement (though this requires more advanced CSS techniques or pre-processing):
+
+```css
+.container {
+  width: calc(50% - 10px);
+  width: max(0, calc(50% - 10px)); /*Alternative solution using max() function in CSS */
+}
+```
+
+The `max-width: 100%;` approach prevents the width from becoming negative. The `max()` function ensures that the calculated width will always be greater than or equal to 0.  Choose the solution that best fits your project's complexity and CSS capabilities.

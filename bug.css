@@ -1,0 +1,11 @@
+The following CSS code snippet demonstrates an uncommon error related to the `calc()` function and its interaction with percentages:
+
+```css
+.container {
+  width: calc(50% - 10px);
+}
+```
+
+This code intends to create a container element whose width is 50% of its parent's width, minus 10 pixels. However, in certain circumstances, this can lead to unexpected results or even render errors.
+
+The problem arises when the `calc()` function's result is negative. While the specification allows for negative values, not all browsers or layout engines handle negative widths gracefully. If the parent container is too narrow, the result of `50% - 10px` might be negative. In this case, the browser may ignore the negative value, resulting in a width of 0 or an unexpected behavior.
